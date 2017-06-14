@@ -34,7 +34,7 @@ $this->title = 'Telephone controller';
                             <td><?= Html::encode("{$telephone->telephone}") ?></td>
                             <td><?= $telephone->city ? Html::encode("{$telephone->city->name}") : '' ?></td>
                             <td class="text-right">
-                                <a href="/telephone/edit/<?= $telephone->id ?>"><span class="glyphicon glyphicon-edit"></span></a>
+                                <a href="/telephone/edit_for_contact/<?= $telephone->id ?>"><span class="glyphicon glyphicon-edit"></span></a>
                                 <a href="/telephone/delete/<?= $telephone->id ?>"><span class="glyphicon glyphicon-remove"></span></a>
                             </td>
                         </tr>

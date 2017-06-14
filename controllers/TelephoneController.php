@@ -21,10 +21,10 @@ class TelephoneController extends Controller {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['*'],
+                'only' => ['index', 'new', 'delete', 'new_for_contact'],
                 'rules' => [
                     [
-                        'actions' => ['*'],
+                        'actions' => ['index', 'new', 'delete', 'new_for_contact'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -109,9 +109,30 @@ class TelephoneController extends Controller {
 
         if ($model->load(Yii::$app->request->post()) && $model->update()) {
 
-            Yii::$app->session->setFlash('editing city');
+            Yii::$app->session->setFlash('editing phone');
 
             return $this->redirect('/telephone');
+
+        } else {
+
+            return $this->render('new', [
+                'model' => $model,
+                'items'=>$items,
+            ]);
+        }
+
+    }
+
+    public function actionEdit_for_contact($id) {
+
+        $model = Telephone::findOne($id);
+        $items = ArrayHelper::map(City::find()->all(), 'id', 'name');
+
+        if ($model->load(Yii::$app->request->post()) && $model->update()) {
+
+            Yii::$app->session->setFlash('editing phone');
+
+            return $this->redirect('/contact/show/'.$model->contact_id);
 
         } else {
 

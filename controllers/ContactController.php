@@ -21,10 +21,10 @@ class ContactController extends Controller {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['*'],
+                'only' => ['index', 'new', 'delete', 'show'],
                 'rules' => [
                     [
-                        'actions' => ['*'],
+                        'actions' => ['index', 'new', 'delete', 'show'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

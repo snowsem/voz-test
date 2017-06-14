@@ -28,6 +28,13 @@ class Telephone extends ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     public function getCity() {
+
         return $this->hasOne(City::className(), ['id' => 'city_id']);
+
+    }
+
+    public function getContact() {
+
+        return $this->hasOne(Contact::className(), ['id' => 'contact_id']);
     }
 }

@@ -15,6 +15,7 @@ $this->title = 'Telephone controller';
             <tr>
                 <th>ID</th>
                 <th>Номер</th>
+                <th>Имя</th>
                 <th>Город</th>
                 <th class="text-right">Действия</th>
 
@@ -25,6 +26,7 @@ $this->title = 'Telephone controller';
                 <tr>
                     <td><?= Html::encode("{$telephone->id}") ?></td>
                     <td><?= Html::encode("{$telephone->telephone}") ?></td>
+                    <td> <?= $telephone->contact ? '<a href="/contact/show/'.$telephone->contact->id.'">'.Html::encode("{$telephone->contact->name}").'</a>' : '' ?></td>
                     <td><?= $telephone->city ? Html::encode("{$telephone->city->name}") : '' ?></td>
                     <td class="text-right">
                         <a href="/telephone/edit/<?= $telephone->id ?>"><span class="glyphicon glyphicon-edit"></span></a>

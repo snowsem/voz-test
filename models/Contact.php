@@ -37,4 +37,5 @@ class Contact extends ActiveRecord {
 
         return $this->hasMany(Telephone::className(), ['contact_id' => 'id']);
     }
+
 }
