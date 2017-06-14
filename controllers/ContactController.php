@@ -5,3 +5,10 @@
  * Date: 14.06.2017
  * Time: 12:04
  */
+namespace app\controllers;
+
+use yii\web\Controller;
+
+class ContactController extends Controller {
+
+}
