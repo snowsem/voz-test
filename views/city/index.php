@@ -4,6 +4,7 @@
 use yii\widgets\LinkPager;
 use yii\helpers\Html;
 $this->title = 'City controller';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
 

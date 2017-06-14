@@ -4,7 +4,9 @@
 use yii\widgets\LinkPager;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 $this->title = 'City controller';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
 
@@ -12,15 +14,26 @@ $this->title = 'City controller';
         <h1>City controller!</h1>
 
         <?php $form = ActiveForm::begin(); ?>
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <div class="form-group">
 
-        <?= $form->field($model, 'name') ?>
-
-        <div class="form-group">
-            <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                    <?= $form->field($model, 'name') ?>
+                </div>
+            </div>
         </div>
 
-        <?php ActiveForm::end(); ?>
+        <div class="row">
+            <div class="form-group col-lg-4">
+                <div class="form-group">
+                    <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+                </div>
+            </div>
+        </div>
 
 
+            <?php ActiveForm::end(); ?>
+
+
+        </div>
     </div>
-</div>

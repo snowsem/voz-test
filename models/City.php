@@ -11,6 +11,9 @@ use yii\db\ActiveRecord;
 
 class City extends ActiveRecord {
 
+    /**
+     * @return array
+     */
     public function rules()
     {
         return [

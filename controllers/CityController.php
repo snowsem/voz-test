@@ -19,10 +19,10 @@ class CityController extends Controller {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index'],
+                'only' => ['*'],
                 'rules' => [
                     [
-                        'actions' => ['index'],
+                        'actions' => ['*'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
